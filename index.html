@@ -6,7 +6,9 @@
    content="width=device-width, initial-
   scale=1.0">
     <title>Jeremiah HandyMan Service</title>
-
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs
+      /font-awesome/6.5.0/css/all.min.css">
     <style>
       body {
         background-color: #111;
@@ -81,6 +83,37 @@
         alternate;
         text-align: center
       }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit,
+      minmax(250px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+      }
+      .service-card {
+        background: #f4f4f4;
+        padding: 25px;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+      .service-card-hover {
+        transform: translateY(-5px);
+      }
+      .service-icon: {
+        font-size: 30px;
+        color: #003366;
+        margin-bottom: 15px;
+      }
+      .service-card h3 {
+        margin-bottom: 10px;
+        font-size:20px;
+      }
+      .service-card p {
+        font-size: 15px;
+        color: #555;
+      }
+        
     </style>
   </head>
 
@@ -89,7 +122,7 @@
       <h1 class="flip-name">Jeremiah Professional
     HandyMan Services</h1>
       <p class="hero-subtext">
-        Quatily repairs and maintance for your home adn business
+        Quatily repairs and maintance for your home and business
       </p>
       <a href=:#" class="call-btn">Get a Free Quote</a>
       <p class="main-text">
@@ -99,12 +132,40 @@
         up on time so you can feel confident your home is in good hand.</p>
 
       <h2 class="section-title">Repairs</h2>
-      <ul class="repairs-list">
-        <li>Drywall repair & patching</li>
-        <li>Faucet and minor plumbing</li>
-        <li>Light fixtures & outlet replacement</li>
-        <li>Flooring,trim, and baseboard repair</li>
-        <li>Door,lock,and hinge repair</li>
+      <div class="services-grid">
+
+        <div class="service-card">
+          <i class="fas fa-hammer service-icon"></i>
+          <h3>Drywall Repair & Patching</h3>
+          <p>Small patches,hole repairs,crack fixes,
+      water damage restoration,and smooth
+          finishing.</p>
+        </div>
+
+        <div "class=service-card">
+          <i class="fas fa-faucet service-icon"></i>
+          <h3>Faucet & Minor Plumbing</h3>
+          <p>Leaky faucet repair, minor pipe fixes,
+      and basic plumbing replacements.</p>
+        </div>
+
+        <div class="srvice-card
+      <i class="fas fa-ruler-combined
+  service-icon"></i>
+      <h3>Floor, Trim & Baseboard Repair</h3>
+      <p>Floor damage repair, trim fixes, and
+      baseboard installation or replacement</p>
+    </div>
+
+      <div class="service-card">
+        <i class="fas fa-door-open service-icon"></i>i>
+
+        <h3>Door, Lock & Hinge Repair</h3>
+        <p>Lock replacement, hinge Repair,door
+        alignment, and hardware installation</p>
+      </div>
+
+    </div>
 
         <div class="contact-info">
           <p>
