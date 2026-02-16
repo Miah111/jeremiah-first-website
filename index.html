@@ -7,201 +7,287 @@
     <title>Jeremiah HandyMan Service</title>
     
     <link rel="stylesheet" 
-     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-   
+     href="https://cdnjs.cloudflare.com/ajax/libs
+      /font-awesome/6.4.0/css/all.min.css">
     <style>
-      body {
-        background-color: #111;
-        color: white;
-        font-family: Arial, sans-serif;
-        text-align: center;
-        margin-top: 50px;
+   
+    * { margin:0; padding:0;
+    box-sizing:border-box; }
+    body { font-family: Arial, Helvetica,
+    sans-serif; background:#f5f6f7; color:#222;
+    line-height: 1.6; }
+      .container { width:90%; max-width:1100px;
+    margin:auto; }
+      
+      .top-bar { background:#111; padding:18px 0; }
+      .nav { display;flex;
+            justify-content:space-between;
+            align-items:center; flex-wrap:wrap; }
+      .logo { color:white; font-size:1.4rem;
+             font-weight:600; }
+      .logo span { color:#c89b3c; }
+      .contact-info a { color:#ddd;
+                       text-decoration:none; margin:0 6px;
+                       font-size:0.9rem; }
+      .contact-info a:hover
+      { text-decoration:underline; }
+      .nav-cta { background:#c89b3c; color:#111;
+                padding: 10px 20px; text-decoration:none;
+                font-weight:600; border-radius:4px; }
+      .hero { background:#1c1c1c; color:white;
+             padding:90px 0; text-align:center; }
+      .hero h1 { font-size:2.2rem;
+                margin-bottom:20px; }
+      .hero p { max-width:650px; margin:auto;
+               margin-bottom:30px; color:#ccc; }
+      .primary-btn { background:#c89b3c; color:#111;
+                    padding:12px 28px; text-decoration:none;
+                    font-weight:600; border-radius:4px;
+                    display:inline-block; }
+      .services { padding:80px 0; text-align:center; }
+      .services h2 { margin-bottom:50px;
+                    font-size:1.8rem; }
+      .services-grid { display:grid;
+                      grid-template-columns:repeat(auto-fit,
+                                                   minmax(240px,1fr)); gap:30px; }
+      .card {
+        background:white;
+        padding:35px 25px;
+        boeder-radius:6px;
+        border:1px soild #e5e5e5;
+        transition: transform 0.5s ease, box-shadow
+        0.5s ease, background-color 0.3s ease;
+        transform-style: preserve-3d;
+        cursor:pointer;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.08), 0
+        2px 4px rgba(0,0,0,0.06);
       }
+      .card:hover {
+        transform: rotateY(10deg) translateY(-10px);
+        box-shadow: 0 12px 24px rgba(0,0,0,0.18), 0
+        6px 12px rgba(0,0,0,0.12);
+        background-color: #fdf6e3;
+      }
+      .icon { font-size:40px; color:#c89b3c;
+             margin-bottom:20px; transition: color 0.3s
+             ease; }
+      .card:hover .icon { color:#e6a823; }
+      
+      .cta-strip { background:#111; color:white;
+                  text-align:center; padding:70px 0; }
+      .cta-strip h2 { margin-bottom:15px; }
+      .cta strip p { margin-bottom:25px; color:#ccc; }
 
-      .flip-name {
-        font-size: 64px;
-        font-weight: bold;
-        animation: bluegreenFlip 2s infinite alternate;
-      }
-      p {
-        font-size: 32px;
-        line-height: 1.9;
-        max-width: 1000px;
-        margin: 30px auto;
-      }
-      @keyframes bluegreenFlip {
-        from {
-          color:blue
-        }
-        to {
-          color:green;
-        }
-      }
-      .section-title {
-        font-size:36px;
-        margin-top:50px;
-        margin-bottom: 20px;
-        color: #00c853
-      }
+      fotter { background:#000; color:#aaa;
+              text-align:center; padding:30px 0;
+              font-size:0.9rem; }
+      footer a { color:#c89b3c;
+                text-decoration:none; }
+      footer a:hover { text-decoration:underline; }
 
-      .repairs-list {
-        list-style: none;
-        padding: 0;
-        font-size: 30px;
-        font-weight; 500;
-        max-width: 900px;
-        margin: 0 auto;
-      }
-      .repairs-list li {
-        margin: 15px 0;
-      }
-      .call-btn {
-        display: inline-block;
-        margin-top: 35px;
-        padding; 18px 36px;
-        font-size: 26px;
-        font-weight: bold;
-        color: white;
-        background-color: #00c853
+      .hover-flip { display:inline-block; transition:
+        transform 0.4s ease; transform-style:
+        preserve-3d; }
+      .hover-flip:hover { transform: rotateY(15deg); }
+
+      .floating-btn {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        background: #c89b3c;
+        color: #111;
+        padding: 14px 20px;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+        transition: transform 0.3s ease, box-shadow
+        0.3s ease;
+        z-index: 999;
         text-decoration: none;
-        border-radius: 10px;
-        transition: backgreound-color 0.3s
-    ease,
-          transform 0.2s ease;
       }
-      .call-btn:hover {
-        background-color: #00a844;
-        transform: scale(1.05)
+      .floating-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
       }
-      .flip-quote {
-        display: block;
-        font-size: 28px;
-        font-style: italic;
-        margin-top: 25px auto 0 auto;
-        animation: bluegreenFlip 2s
-   infinite
-        alternate;
-        text-align: center
+
+      #qutoeForm {
+        diaplay: none;
+        position: fixed;
+        top:0; left:0; width:100%; height:100%;
+        background: rgba(0,0,0,0.7);
+        justify-content: center;
+        align-items:center;
+        z-index: 1000;
       }
-      .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit,
-      minmax(250px, 1fr));
-        gap: 25px;
-        margin-top: 30px;
+
+      #quoteForm .form-container {
+        background: #fff;
+        padding: 30px;
+        border-radius; 8px
+        max-width: 400px;
+        width: 90%;
+        text-align:center;
       }
-      .service-card {
-        background: #f4f4f4;
-        padding: 25px;
-        border-radius: 10px;
-        text-align: center;
-        transition: transform 0.3s ease;
-      }
-      .service-card-hover {
-        transform: translateY(-5px);
-      }
-      .service-icon: {
-        font-size: 30px;
-        color: #003366;
+
+      #quoteForm input, #quoteForm textarea {
+        width:100%
+        padding: 12px;
         margin-bottom: 15px;
+        border:1px soild #ccc;
+        border-radius: 4px;
       }
-      .service-card h3 {
-        margin-bottom: 10px;
-        font-size:20px;
+
+      #quoteForm button {
+        background:#c89b3c;
+        color:#111;
+        padding: 12px 20px;
+        border: none;
+        font-weight:600;
+        border-radius:4px;
+        cursor:pointer;
+        width:100%;
       }
-      .service-card p {
-        font-size: 15px;
-        color: #555;
+
+      #quoteForm button:hover { background:#e6a823; }
+
+      #quoteForm .close-btn {
+        position: absolute;
+        top:15px;
+        right:20px;
+        font-size:1.5rem;
+        color:#111;
+        cursor:pointer;
       }
-      .service-card {
-        background: #f4f4f4;
-        padding: 25px;
-        bprder-radius: 10px;
-        text-align: center;
-        transition: transform 0.3s ease;
-        color: #111;
-      }
-      .service-card {
-        background: #f4f4f4;
-        padding: 25px;
-        border-radius: 10px;
-        text-align: center;
-        transition: transform 0.3s ease;
-        color: #111;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      }
-      .service-icon {
-        font-size: 40px;
-        color:blue;
-        margin-bottom: 15px;
-      }
-    </style>
+      </style>
   </head>
+  </body>
 
-    <body>
-
-      <h1 class="flip-name">Jeremiah Professional
-    HandyMan Services</h1>
-      <p class="hero-subtext">
-        Quatily repairs and maintenance for your home and business
-      </p>
-      <a href=:#" class="call-btn">Get a Free Quote</a>
-      <p class="main-text">
-        Welcome to Jeremiah HandyMan Services. I provide
-        reliable, professional home repair and maintenance
-        services for homeowners and small businesses in the
-        Three Rivers area. From small repairs to larger
-        projects, I deliver quality workmanship, clear
-        communication, and dependable service you can
-        count on.</p>
-
-      <h2 class="section-title">Repairs</h2>
-      <div class="services-grid">
-
-        <div class="service-card">
-          <i class="fa-solid fa-screwdriver-wrench
-            service-icon"></i>
-          <h3>Drywall Repair & Patching</h3>
-          <p>Hole repairs, crack repairs, water damage repair, and
-             smooth finishing.</p>
+    <header class="top-bar">
+      <div class="container nav">
+        <div class="logo hover-flip">
+          Jeremiah <span>Handyman</span>
+          Services
         </div>
-
-        <div class="service-card">
-          <i class="fa-soild fa-faucet service-icon"></i>
-          
-          <h3>Faucet & Minor Plumbing</h3>
-          <p>Leaky faucet repair and minor plumbing services.</p>
-        </div>
-
-        <div class="service-card">
-      <i class="fa-soild fa-hammer service-icon"></i>
-          
-      <h3>Floor, Trim & Baseboard Repair</h3>
-      <p>Floor damage repair, trim repair, and baseboard
-         installation or replacement</p>
-        </div>
-
-      <div class="service-card">
-        <i class="fa-soild fa-lock service-icon"></i>
-
-        <h3>Door, Lock & Hinge Repair</h3>
-        <p>Lock replacement, hinge Repair, door
-        alignment, and hardware installation</p>
-      </div>
-
-    </div>
-
         <div class="contact-info">
-          <p>
-           <strong>Phone:</strong>
-          <a href="tel:5863569780">586-356-9780</a>
+          <a
+            href="tel:5863569780>586-356-9780</a> |
+            <a
+            href="mailto:jrmhphifer@gmail.com">jrmhphifer@gmail.com</a>
+        </div>
+        <a href="#contact" class="nav-cta">Get a 
+          Free Quote</a>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container hero-content">
+        <h1>Quality Repairs & Maintence for
+        Your Home and Business</h1>
+        <p>Serving homeowners and small businesses
+        in the Three Rivers area.
+          Honest, dependable workmanship done right the 
+          first time.
         </p>
-         <p>
-           <strong>Email:</strong>
-           <a 
-      href="mailto:jrmhphifer@jmail.com">jrmhphifer@gmail.com</a>
-        </p>
-     </div>
-        <p class=flip-quote">Quality work, Done right the first time.</p>
-        
-        
+        <a href="#services"
+          class="primary-btn">View Services</a>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Professional Services</h2>
+        <div class="services-grid">
+
+          <div class="card">
+            <i class="fa-soild
+              fa-screwdriver-wrench icon hover-flip"></i>
+            <h3>Drywall Repair</h3>
+            <p>Clean patches and smooth
+            finishes that blend seamlessly</p>
+          </div>
+
+          <div class="card'>
+            <i class="fa-solid fa-wrench
+            icon hover-flip"></i>
+            <h3>Plumbing</h3>
+            <p>Reliable repairs and installations with
+            attention to detail.</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-soild fa-hammer
+              icon hover-flip"></i>
+            <h3>Floor & Trim</h3>
+            <p>Precision trim and flooring
+            work completed properly.</p>
+          </div>
+
+          <div class="card">
+            <i class="fa-solid fa-key icon 
+              hover-flip"></i>
+            <h3>Door & Lock Repair</h3>
+            <p>Secure adjustments and dependable
+            doore solutions</p>
+          </div>
+        </section>
+
+          <section class="cta-strip">
+            <div class="container">
+              <h2>Need Reliable Repairs?</h2>
+              <p>Contact Jeremiah Handyman Services
+              today for a free estimate.</p>
+              <a href="#contact"
+                class="primary-btn">Request a Quote</a>
+            </div>
+          </section>
+          <footer id="contact">
+            <div class="container">
+              <p>Phone: <a
+            href="5863569780">586-356-9780</a> | Email:
+              <a
+                href="mailto:jrmhphifer@gmail.com">jrmhphifer@gmail.com</a></p>
+              <p>Serving the Three Rivers Area</p>
+              <p>2026 Jeremiah Handyman Services.
+              All Right Reseerved.</p>
+            </div>
+          </footer>
+
+          <a class="floating-btn"
+            onclick="openForm()">Request a Quote</a>
+
+          <div id="quoteForm">
+            <div class="form-container"
+              <span class="close-btn"
+              onclick="closeForm()">&times;</span>
+              <h2>Request a Quote</h2>
+              <form>
+                <input type="text" placeholder="Your
+                  Name" required>
+                <input type="tel" placeholder="Phone
+                  Number" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Massage"
+                  rows="4" required></textarea>
+                <button type="submit">Send Request</button>
+              </form>
+            </div>
+          </div>
+
+          <script>
+            function openForm()
+            { document.getElementById('quoteForm') .style.display = 'flex'; }
+            function closeForm()
+            { document.getElementById('quoteForm') .style.display = 'none'; }
+          </script>
+
+        </body>
+        </html>
+          </script>
+                  
+              </form>
+
+          
+      
+      
+            
