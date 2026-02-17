@@ -166,17 +166,18 @@
         margin-top: 15px;
       }
 
-      .gallery img {
-        width: 100%
-        height: 120px;
-        object-fit: cover;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
       }
-      .gallery img:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+
+      .gallery img {
+        width: 150px !important;
+        height: 120px !important;
+        object-fit: cover !important;
+        border-radius: 8px;
       }
                                     
       </style>
