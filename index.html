@@ -297,8 +297,8 @@
           <a class="floating-btn"
             onclick="openForm()">Request a Quote</a>
 
-          <div id="quoteForm">
-            <div class="form-container"
+          <div id="quoteForm" onclick="closeForm()">
+            <div class="form-container" onclick="event.stopPropagation()">
               <span class="close-btn"
               onclick="closeForm()">&times;</span>
               <h2>Request a Quote</h2>
@@ -323,9 +323,9 @@
 
           <script>
             function openForm()
-            { document.getElementById('quoteForm') .style.display = 'flex'; }
+            { document.getElementById("quoteForm") .style.display = "flex"; }
             function closeForm()
-            { document.getElementById('quoteForm') .style.display = 'none'; }
+            { document.getElementById("quoteForm") .style.display = "none"; }
           </script>
 
         </body>
