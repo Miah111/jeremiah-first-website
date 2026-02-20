@@ -293,35 +293,14 @@
               All Right Reseerved.</p>
             </div>
           </footer>
+    
 
-          <a class="floating-btn"
-            onclick="openForm()">Request a Quote</a>
-
-          <div id="quoteForm" onclick="closeForm()">
-            <div class="form-container" onclick="event.stopPropagation()">
-              <span class="close-btn" onclick="closeForm()">&times;</span>
-              <h2>Request a Quote</h2>
-             
-              <form
-                action="https://formsubmit.co/jrmhphifer@gmail.com" method="POST">
-                <input type="text" name="name"
-                  placeholder="Your Name" required>
-                <input type="tel" name="phone"
-                  placeholder="Your Phone Number" required>
-                <input type="email" name="email"
-                  placeholder="Your Email" required>
-                <textarea name="Massage" placeholder="Describe your project" required></textarea>
-                
-                <button type="submit">Request a Quote</button>
-                <input type="hidden" name="_captcha"
-                  value="false">
-              </form>
-            </div>
+               
+            
           </div>
 
           <script>
-            function openForm()
-            { document.getElementById("quoteForm") .style.display = "flex"; }
+           
             function closeForm()
             { document.getElementById("quoteForm") .style.display = "none"; }
           </script>
