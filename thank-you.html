@@ -6,35 +6,53 @@
     <meta http-equiv="refresh"
       content="5;url=index.html">
     <style>
-      body { 
+      body {
+        margin: 0;
         font-family; Arial,sans-serif;
-        text-align: center;
-        padding: 100px;
-        background-color: #f4f4f4;
+        background: linear-gradient(135deg,#1e3c72, #2a5298);
+        display: flex;
+        justify-content: center;
+        align-items: center
+        height: 100vh;
+        color: white;
       }
       .box {
-        background:white;
-        padding: 40px;
-        border-radius: 8px;
-        display: inline-block;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        padding: 60px;
+        border-radius: 15px;
+        text-align: center;
+        width: 90%;
+        max-width: 600px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       }
-      a {
+      h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+      }
+      .button {
         display: inline-block;
-        margin-top: 20px;
+        margin-top: 25px;
+        padding: 15px 30px;
+        background: white;
+        color: #1e3c72;
         text-decoration: none;
-        color: white;
-        background: #333;
-        padding: 10px 20px;
-        border-radius: 4px;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: 0.3s ease;
+      }
+      .button:hover {
+        background: #f1f1f1;
+        transform: scale(1.05);
       }
     </style>
   </head>
   <body>
     <div class="box">
-      >h1>Thank You!</h1>
+      <h1>Thank You!</h1>
       <p>Your request has been sent successfully.</p>
       <p>I will contact you shortly</p>
+      <a class="button" href="index.html">Return to Homepage</a>
     </div>
     
       
