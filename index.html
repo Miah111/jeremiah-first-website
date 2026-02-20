@@ -286,8 +286,7 @@
             <div class="container">
               <h2>Request a Quote</h2>
               <form
-                action="https://formsubmit.co/jrmhphifer@gmail.com
-                method="POST">
+                action="https://formsubmit.co/jrmhphifer@gmail.com method="POST">
                 <input type="text" name="name"
                   placeholder="Your Name" required>
                   <input type="tel" name="phone"
@@ -295,7 +294,9 @@
                   <input type="email" name="email"
                     placeholder="Your Email" required>
                   <textarea name="message" placeholder="Describe your project" required></textarea>
-                  <button type="submit">Request a Quote</button>
+                <input type="hidden" name="_next"
+                  value="https://miah111.github.io/jeremiah-first-website/thank-you.html">
+                  <button type="submit">Send Message</button>
                   <input type="hidden" name="_captcha"
                     value="flase">
               </form>
